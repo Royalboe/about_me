@@ -32,7 +32,9 @@
             android:hint="@string/what_is_your_nick_name"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColorHint="#78909C"
+            android:importantForAutofill="no" />
 
         <Button
             android:id="@+id/done_button"
@@ -41,6 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:fontFamily="@font/roboto_italic"
+            android:layout_marginTop="@dimen/layout_margin"
             android:text="@string/done" />
 
         <TextView
@@ -50,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/layout_margin"
             android:textAlignment="center"
-            android:text="@={myName.name}"
+            android:text="@={myName.nickname}"
             android:visibility="gone" />
 
         <ImageView
@@ -59,23 +62,43 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/layout_margin"
             android:contentDescription="@string/yellow_star"
-            app:srcCompat="@android:drawable/btn_star_big_on" />
+            app:srcCompat="@android:drawable/btn_star_big_on"
+            tools:ignore="ImageContrastCheck" />
 
-        <ScrollView
+<!--        <ScrollView-->
+<!--            android:id="@+id/bio_scrollview"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_marginTop="@dimen/layout_margin">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/bio_text"-->
+<!--                style="@style/name_style"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:lineSpacingMultiplier="@dimen/space_multiplier"-->
+<!--                android:paddingLeft="@dimen/padding_start"-->
+<!--                android:paddingRight="@dimen/padding_start"-->
+<!--                android:text="@string/about_grace"-->
+<!--                android:textAlignment="viewStart" />-->
+<!--        </ScrollView>-->
+
+        <androidx.core.widget.NestedScrollView
             android:id="@+id/bio_scrollview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="@dimen/layout_margin">
 
-            <TextView
-                android:id="@+id/bio_text"
-                style="@style/name_style"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="@dimen/padding_start"
-                android:paddingRight="@dimen/padding_start"
-                android:text="@string/about_grace"
-                android:textAlignment="viewStart" />
-        </ScrollView>
+        <TextView
+            android:id="@+id/bio_text"
+            style="@style/name_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingMultiplier="@dimen/space_multiplier"
+            android:paddingLeft="@dimen/padding_start"
+            android:paddingRight="@dimen/padding_start"
+            android:text="@string/about_grace"
+            android:textAlignment="viewStart" />
+        </androidx.core.widget.NestedScrollView>
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>
